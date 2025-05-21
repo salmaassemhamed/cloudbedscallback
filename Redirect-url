@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloudbeds Callback</title>
+</head>
+<body>
+  <h2>📩 Callback Page</h2>
+  <p id="message">جارٍ معالجة الكود...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.getElementById("message").innerHTML =
+        `<strong>✅ تم استلام كود التفويض:</strong><br><code>${code}</code><br><br>انسخه واستخدمه لطلب Access Token.`;
+    } else {
+      document.getElementById("message").innerText =
+        "❌ لم يتم العثور على كود تفويض في الرابط.";
+    }
+  </script>
+</body>
+</html>
