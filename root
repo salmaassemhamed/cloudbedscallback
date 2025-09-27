@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloudbeds OAuth Callback</title>
+</head>
+<body>
+  <h2>Cloudbeds OAuth Callback</h2>
+  <p id="output">Waiting for redirect...</p>
+
+  <script>
+    // Get the ?code=AUTH_CODE from the URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.getElementById("output").innerText =
+        "Authorization Code: " + code;
+    } else {
+      document.getElementById("output").innerText =
+        "No authorization code found.";
+    }
+  </script>
+</body>
+</html>
